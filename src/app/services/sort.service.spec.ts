@@ -136,5 +136,11 @@ describe('SortService', () => {
 
       expect(arr).toEqual([0.0, 1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9])
     })
+
+    it('should sort numbers that are less than 1', () => {
+      const arr =  service.mergeSort([-1, -5, -9, 0, 3, -12, 7]);
+
+      expect(arr).toEqual([-12, -9, -5, -1, 0, 3, 7]);
+    })
   });
 });
