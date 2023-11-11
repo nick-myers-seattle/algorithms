@@ -143,4 +143,30 @@ describe('SortService', () => {
       expect(arr).toEqual([-12, -9, -5, -1, 0, 3, 7]);
     })
   });
+
+  describe('Selection Sort', () => {
+    it('should return an empty array, when passed an empty array', () => {
+      const arr = service.selectionSort([]);
+
+      expect(arr).toEqual([]);
+    });
+
+    it('should sort an array of 2 items', () => {
+      const arr = service.selectionSort([2, 1]);
+
+      expect(arr).toEqual([1, 2]);
+    })
+
+    it('should sort numbers that are less than 1', () => {
+      const arr =  service.selectionSort([-1, -5, -9, 0, 3, -12, 7]);
+
+      expect(arr).toEqual([-12, -9, -5, -1, 0, 3, 7]);
+    })
+
+    it('should sort an array with multiple duplicates', () => {
+      const arr = service.selectionSort([7, 5, 7, 9, 3, 5, 1, 7, 8, 2, 5, 0, 7, 4, 6, 5]);
+
+      expect(arr).toEqual([0, 1, 2, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 7, 8, 9]);
+    });
+  });
 });

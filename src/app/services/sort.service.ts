@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { min } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ export class SortService {
   constructor() { }
 
   // time-complexity:   O(n^2)
-  // space-complexity:  O(n)
+  // space-complexity:  O(n)  in-place
   bubbleSort(arr :number[]): number[] {
     for (let i=0; i<arr.length -1; i++) {
       for (let j=0; j<arr.length -1; j++) {
@@ -68,5 +69,22 @@ export class SortService {
       }
     }
     return arr3;
+  }
+
+  // time-complexity:   O(n^)
+  // space-complexity:  O(n)  in-place
+  selectionSort(arr :number[]) :number[] {
+    for (let i=0; i<arr.length; i++) {
+      let minIndex = i;
+      for (let j=i; j<arr.length; j++) {
+        if (arr[j] < arr[minIndex]) {
+          minIndex = j;
+        }
+      }
+      const temp = arr[i];
+      arr[i] = arr[minIndex];
+      arr[minIndex] = temp;
+    }
+    return arr;
   }
 }
