@@ -29,7 +29,6 @@ export class PrimesService {
         }
 
         if (j === primes.length -1) {
-          console.log('i is:  ' + i)
           primes.push(i);
           break;
         }
