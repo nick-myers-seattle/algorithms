@@ -7,6 +7,8 @@ export class SearchService {
 
   constructor() { }
 
+  // time-complexity:   O(log(n))
+  // space-complexity:  O(n)
   binarySearch(arr: Array<number>, query: number): number {
     let minIndex = 0;
     let maxIndex = arr.length -1;

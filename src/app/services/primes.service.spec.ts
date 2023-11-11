@@ -35,6 +35,11 @@ describe('PrimesService', () => {
     expect(function() { service.getNthPrime(num) }).toThrowError('n cannot be less than 1.');
   });
 
+  it('should throw an error when n is negative', () => {
+    let num = -5;
+    expect(function() { service.getNthPrime(num) }).toThrowError('n cannot be less than 1.');
+  });
+
   it('should throw an error when n is float instead of int', () => {
     expect(function() { service.getNthPrime(12.234) }).toThrowError('n must be an integer.');
   })

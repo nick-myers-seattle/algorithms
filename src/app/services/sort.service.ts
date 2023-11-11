@@ -7,6 +7,8 @@ export class SortService {
 
   constructor() { }
 
+  // time-complexity:   O(n^2)
+  // space-complexity:  O(n)
   bubbleSort(arr :number[]): number[] {
     for (let i=0; i<arr.length -1; i++) {
       for (let j=0; j<arr.length -1; j++) {

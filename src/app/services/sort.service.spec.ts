@@ -21,7 +21,7 @@ describe('SortService', () => {
       expect(arr).toEqual([]);
     });
 
-    it('should return the same array, when give an array with just 1 iteam', () => {
+    it('should return the same array, when give an array with just 1 item', () => {
       const arr = service.bubbleSort([123]);
 
       expect(arr).toEqual([123]);
