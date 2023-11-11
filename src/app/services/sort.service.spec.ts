@@ -75,4 +75,66 @@ describe('SortService', () => {
       expect(arr).toEqual([0.0, 1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9]);
     });
   });
+
+  describe('mergeSort', () => {
+    it('should return an empty array, when passed an empty array', () => {
+      const arr = service.mergeSort([]);
+
+      expect(arr).toEqual([]);
+    });
+
+    it('should return the array, when the array is only 1 item', () => {
+      const arr = service.mergeSort([7]);
+
+      expect(arr).toEqual([7]);
+    });
+
+    it('should sort an array of 2 items', () => {
+      const arr = service.mergeSort([5, 3]);
+
+      expect(arr).toEqual([3, 5]);
+    });
+
+    it('should sort an array of 3 items', () => {
+      const arr = service.mergeSort([5, 3, 1]);
+
+      expect(arr).toEqual([1, 3, 5]);
+    });
+
+    it('should sort an array of 4 items', () => {
+      const arr = service.mergeSort([7, 5, 3, 1]);
+
+      expect(arr).toEqual([1, 3, 5, 7]);
+    });
+
+    it('should sort an array of 5 items', () => {
+      const arr = service.mergeSort([7, 5, 9, 3, 1]);
+
+      expect(arr).toEqual([1, 3, 5, 7, 9]);
+    });
+
+    it('should sort an array of 10 items', () => {
+      const arr = service.mergeSort([7, 5, 9, 3, 1, 8, 2, 0, 4, 6]);
+
+      expect(arr).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+    });
+
+    it('should sort an array of 20 items', () => {
+      const arr = service.mergeSort([7, 5, 9, 3, 1, 8, 2, 0, 4, 6, 10, 12, 15, 19, 18, 16, 11, 13, 14, 17]);
+
+      expect(arr).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]);
+    });
+
+    it('should sort an array with multiple duplicates', () => {
+      const arr = service.mergeSort([7, 5, 7, 9, 3, 5, 1, 7, 8, 2, 5, 0, 7, 4, 6, 5]);
+
+      expect(arr).toEqual([0, 1, 2, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 7, 8, 9]);
+    });
+
+    it('should sort floating point numbers', () => {
+      const arr = service.mergeSort([9.9, 4.4, 7.7, 1.1, 0.0, 2.2, 5.5, 3.3, 6.6, 8.8]);
+
+      expect(arr).toEqual([0.0, 1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9])
+    })
+  });
 });
