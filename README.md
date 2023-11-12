@@ -2,7 +2,9 @@
 Repository for algorithms and data-structures
 
 Algorithms can be found in src/app/services
+
 Data Structures can be found in src/app/data-structures
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
 
