@@ -114,7 +114,7 @@ describe('Queue', () => {
     expect(myQ.q).toEqual([]);
   });
 
-  it('should return an empty Queue on clear(), for chaining', () => {
+  it('should return the empty Queue on clear(), for chaining', () => {
     const myQ = new Queue();
     myQ.push(23).push(12).push(9).push(6).push(5);
 
