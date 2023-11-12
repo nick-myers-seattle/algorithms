@@ -164,7 +164,7 @@ export class LinkedList {
   }
 
   // time-complexity:   O(n)
-  // space-complexity:  O(1)
+  // space-complexity:  O(n)
   // return all values in an array, with optional function argument to run on each value
   iterate(func? :Function) :any[] {
     const arr = []
